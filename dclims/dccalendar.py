@@ -40,7 +40,7 @@ class calendar:
     page_number = 1
     url = "http://dccouncil.us/events/list/?tribe_paged=%s"%page_number
 
-    re = request.get(url)
+    re = requests.get(url)
 
     soup = bs(re.content,"lxml")
 
@@ -49,6 +49,7 @@ class calendar:
     ul_list = []
     for article in articles:
         ul_list.append(article.ul)
+    print(ul_list)
 
 '''  *****************        APPENDICES   *************************
                     I.Changes to look into or needed
