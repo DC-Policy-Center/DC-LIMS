@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'dclims',
   packages = ['dclims'], # this must be the same as the name above
-  version = '0.1',
+  version = '0.2',
   description = 'A simple wrapper for the D.C. Legislative Information Management System (DC LIMS)',
   author = 'Michael Watson',
   author_email = 'michael@dcpolicycenter.org',
