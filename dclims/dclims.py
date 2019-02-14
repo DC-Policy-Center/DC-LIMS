@@ -37,7 +37,7 @@ class get:
         return(response)
 
 
-        
+
 #*****************************************************************************#
     def mostVisited(rowLimit,**kwargs):
         '''GETs most popular legislation. Count determines the number of
@@ -132,13 +132,13 @@ class post:
 
 
 
-        verbose = kwargs.get('verbose',False)
+        verbose = kwargs.post('verbose',False)
         try: kwargs.pop('verbose')
         except: pass
-        rowLimit = kwargs.get('rowLimit')
+        rowLimit = kwargs.post('rowLimit')
         try: kwargs.pop('rowLimit')
         except: pass
-        offSet = kwargs.get('offSet')
+        offSet = kwargs.post('offSet')
         try: kwargs.pop('offSet')
         except: pass
 

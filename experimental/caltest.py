@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as bs
 import re
 
 page_number = 1
-file_name = 'out-2-12-19.tsv'
+file_name = 'out-2-14-19.tsv'
 
 
 
