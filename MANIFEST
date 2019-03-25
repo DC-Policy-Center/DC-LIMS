@@ -3,4 +3,5 @@ LICENSE.txt
 README.md
 setup.cfg
 setup.py
+dclims\dccalendar.py
 dclims\dclims.py

@@ -27,7 +27,7 @@ class get:
 
         q = {}
         verbose = kwargs.get('verbose',False)
-        head = {'content-type':'application/json'}
+        head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
 
 
         website = 'http://lims.dccouncil.us/api/v1/Legislation/LatestLaws?%s'%(rowLimit)
@@ -45,7 +45,7 @@ class get:
 
         verbose = kwargs.get('verbose',False)
         q = {}
-        head = {'content-type':'application/json'}
+        head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
 
 
         website = 'http://lims.dccouncil.us/api/v1/Legislation/MostVisited?%s'%(rowLimit)
@@ -66,7 +66,7 @@ class get:
 
         verbose = kwargs.get('verbose',False)
         q = {}
-        head = {'content-type':'application/json'}
+        head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
         website = 'http://lims.dccouncil.us/api/v1/Legislation/Details?legislationNumber=%s'%(legislationNumber)
         if(verbose == True):print('GET- Details')
         response = requests.get(website,data=json.dumps(q),headers=head)
@@ -81,7 +81,7 @@ class get:
 
         verbose = kwargs.get('verbose',False)
         q = {}
-        head = {'content-type':'application/json'}
+        head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
         website = 'http://lims.dccouncil.us/api/v1/Legislation/RequestOf?councilPeriod=%s'%(councilPeriod)
         if(verbose == True):print('GET- Details')
         response = requests.get(website,data=json.dumps(q),headers=head)
@@ -113,7 +113,7 @@ class post:
         except: pass
         #Building Request
         q = kwargs
-        head = {'content-type':'application/json'}     #Requests JSON response
+        head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}      #Requests JSON response
         #Building API call from request building
         website = 'http://lims.dccouncil.us/api/v1/Legislation/Search?%s'%(rowLimit)
         #Sending POST request
@@ -144,7 +144,7 @@ class post:
 
 
         q = kwargs
-        head = {'content-type':'application/json'}     #Requests JSON response
+        head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}      #Requests JSON response
         #Building API call from request building
         website = 'http://lims.dccouncil.us/api/v1/Legislation/AdvancedSearch?%s'%(rowLimit)
         if(verbose == True):print('WEBSITE: '+ str(website))
@@ -171,7 +171,7 @@ class post:
         except: pass
 
         q = kwargs
-        head = {'content-type':'application/json'}     #Requests JSON response
+        head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}      #Requests JSON response
         #Building API call from request building
         website = 'http://lims.dccouncil.us/api/v1/Voting/Search?%s'%(rowLimit)
         #Sending POST request
@@ -190,7 +190,7 @@ class masters:
         def limsLookUps(**kwargs):
             verbose = kwargs.get('verbose',False)
             q = {}
-            head = {'content-type':'application/json'}
+            head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
             website = 'http://lims.dccouncil.us/api/v1/masters/LIMSLookUps'
             if(verbose == True):print('GET- Details')
             response = requests.get(website,data=json.dumps(q),headers=head)
@@ -203,7 +203,7 @@ class masters:
         def members(councilPeriod,**kwargs):
             verbose = kwargs.get('verbose',False)
             q = {}
-            head = {'content-type':'application/json'}
+            head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
             website = 'http://lims.dccouncil.us/api/v1/masters/Members?councilPeriod=%s'%(councilPeriod)
             if(verbose == True):print('GET- Details')
             response = requests.get(website,data=json.dumps(q),headers=head)
@@ -216,7 +216,7 @@ class masters:
         def committees(councilPeriod,**kwargs):
             verbose = kwargs.get('verbose',False)
             q = {}
-            head = {'content-type':'application/json'}
+            head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
             website = 'http://lims.dccouncil.us/api/v1/masters/Committees?councilPeriod=%s'%(councilPeriod)
             if(verbose == True):print('GET- Details')
             response = requests.get(website,data=json.dumps(q),headers=head)
@@ -229,7 +229,7 @@ class masters:
         def hearingTypes(councipPeriod,**kwargs):
             verbose = kwargs.get('verbose',False)
             q = {}
-            head = {'content-type':'application/json'}
+            head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
             website = 'http://lims.dccouncil.us/api/v1/masters/HearingTypes?councilPeriod=%s'%(councilPeriod)
             if(verbose == True):print('GET- Details')
             response = requests.get(website,data=json.dumps(q),headers=head)
@@ -242,7 +242,7 @@ class masters:
         def councilPeriods(councilPeriods,**kwargs):
             verbose = kwargs.get('verbose',False)
             q = {}
-            head = {'content-type':'application/json'}
+            head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
             website = 'http://lims.dccouncil.us/api/v1/masters/CouncilPeriods?councilPeriod=%s'%(councilPeriod)
             if(verbose == True):print('GET- Details')
             response = requests.get(website,data=json.dumps(q),headers=head)
@@ -255,7 +255,7 @@ class masters:
         def legislationCategories(**kwargs):
             verbose = kwargs.get('verbose',False)
             q = {}
-            head = {'content-type':'application/json'}
+            head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
             website = 'http://lims.dccouncil.us/api/v1/masters/LegislationCategories'
             if(verbose == True):print('GET- Details')
             response = requests.get(website,data=json.dumps(q),headers=head)
@@ -270,7 +270,7 @@ class masters:
             and Sort Order of each Legislation type '''
             verbose = kwargs.get('verbose',False)
             q = {}
-            head = {'content-type':'application/json'}
+            head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
             website = 'http://lims.dccouncil.us/api/v1/masters/LegislationTypes'
             if(verbose == True):print('GET- Details')
             response = requests.get(website,data=json.dumps(q),headers=head)
@@ -285,7 +285,7 @@ class masters:
             ''' List of all places where a Legislation could be introduced. Returns Id, Name, and Sort Order of each place read '''
             verbose = kwargs.get('verbose',False)
             q = {}
-            head = {'content-type':'application/json'}
+            head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
             website = 'http://lims.dccouncil.us/api/v1/masters/placeRead'
             if(verbose == True):print('GET- Details')
             response = requests.get(website,data=json.dumps(q),headers=head)
@@ -298,7 +298,7 @@ class masters:
 
             verbose = kwargs.get('verbose',False)
             q = {}
-            head = {'content-type':'application/json'}
+            head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
             website = 'http://lims.dccouncil.us/api/v1/masters/Places'
             if(verbose == True):print('GET- Details')
             response = requests.get(website,data=json.dumps(q),headers=head)
@@ -312,7 +312,7 @@ class masters:
             ''' List of all vote responses. returns Id, Name, and Sort Order of each vote response '''
             verbose = kwargs.get('verbose',False)
             q = {}
-            head = {'content-type':'application/json'}
+            head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
             website = 'http://lims.dccouncil.us/api/v1/masters/VoteResponses'
             if(verbose == True):print('GET- Details')
             response = requests.get(website,data=json.dumps(q),headers=head)
@@ -325,7 +325,7 @@ class masters:
             ''' Get all Vote by Types '''
             verbose = kwargs.get('verbose',False)
             q = {}
-            head = {'content-type':'application/json'}
+            head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
             website = 'http://lims.dccouncil.us/api/v1/masters/VoteTypes'
             if(verbose == True):print('GET- Details')
             response = requests.get(website,data=json.dumps(q),headers=head)
@@ -339,7 +339,7 @@ class masters:
             ''' Get all Legislation Status '''
             verbose = kwargs.get('verbose',False)
             q = {}
-            head = {'content-type':'application/json'}
+            head = {'content-type':'application/json','User-agent': 'Mozilla/5.0'}
             website = 'http://lims.dccouncil.us/api/v1/masters/LegislationStatus'
             if(verbose == True):print('GET- Details')
             response = requests.get(website,data=json.dumps(q),headers=head)

@@ -22,19 +22,6 @@ def topLevelTest(toPrint):
 
 class get:
 #*****************************************************************************#
-    def latestLaws(rowLimit,**kwargs):
-        '''GETs latest legislation that have been made into official laws'''
-
-        q = {}
-        verbose = kwargs.get('verbose',False)
-        head = {'content-type':'application/json'}
-
-
-        website = 'http://lims.dccouncil.us/api/v1/Legislation/LatestLaws?%s'%(rowLimit)
-        if(verbose == True):print('GET- Latest Laws')
-        response = requests.get(website,data=json.dumps(q),headers=head)
-        if(verbose == True):print('RESPONSE: '+ str(response))
-        return(response)
 
 class calendar:
     page_number = 1
@@ -52,7 +39,7 @@ class calendar:
     print(ul_list)
 
 '''  *****************        APPENDICES   *************************
-                    I.Changes to look into or needed
+                    I. Only pulls list 
                     II.
                     III.
                     IV.

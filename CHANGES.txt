@@ -1,0 +1,2 @@
+Version 0.3 -
+* Added in Mozilla headers to access DC LIMS API. 
