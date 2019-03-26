@@ -132,13 +132,13 @@ class post:
 
 
 
-        verbose = kwargs.post('verbose',False)
+        verbose = kwargs.get('verbose',False)
         try: kwargs.pop('verbose')
         except: pass
-        rowLimit = kwargs.post('rowLimit')
+        rowLimit = kwargs.get('rowLimit')
         try: kwargs.pop('rowLimit')
         except: pass
-        offSet = kwargs.post('offSet')
+        offSet = kwargs.get('offSet')
         try: kwargs.pop('offSet')
         except: pass
 

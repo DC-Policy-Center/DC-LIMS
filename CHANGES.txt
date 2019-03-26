@@ -1,2 +1,9 @@
 Version 0.2 -
 * Added in Mozilla headers to access DC LIMS API.
+
+Version 0.3 -
+* Added in description
+* Bugfix, advancedSearch Kwargs from "post" to "get"
+
+Version 0.4 -
+* Fixed README
