@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup as bs
 import re
 
 page_number = 1
-file_name = 'out-2-14-19.tsv'
+file_name = 'out-4-11-19.tsv'
 
 
 
@@ -38,11 +38,20 @@ for page in range(4):
         committee = 'missing-committee'
         subject = 'missing-subject'
 
-        date = article.time
-        date = re.match(r"<time datetime=\"(.*)\+0000",str(date))
-        date = date.group(1)
 
-        committee = article.a['title']
+        date = article.time
+        #date = re.match(r"<time datetime=\"(.*)\+0000",str(date))
+        date = re.match(r"<time datetime=\"(.*)\-0400",str(date))
+        try:
+            date = date.group(1)
+        except:
+            date = 'NONETYPE'
+
+        try:
+            committee = article.a['title']
+        except:
+            committee = 'missing-committee'
+
         subj_list = []
         try:
             for item in article.ul:
