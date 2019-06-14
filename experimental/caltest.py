@@ -1,9 +1,12 @@
 import requests
 from bs4 import BeautifulSoup as bs
 import re
+import time
+
+date = time.strftime("%m-%d-%y")
 
 page_number = 1
-file_name = 'out-5-16-19.tsv'
+file_name = 'out-{}.tsv'.format(date)
 
 
 
@@ -57,7 +60,13 @@ for page in range(4):
             for item in article.ul:
                 for item_2 in item:
                     if item_2 != '\n':
-                        new_subj = item_2
+
+                        try:
+                            searching = re.search(r"<a href=\"(.*)\">",str(item_2))
+                            new_subj = searching.group(1)
+                        except:
+                            new_subj = item_2
+
                         '''
                         if '/Legislation/' in str(new_subj):
                             print('test' + str(new_subj))
